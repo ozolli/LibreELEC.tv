@@ -10,7 +10,7 @@
         #               athlon-fx amdfam10 barcelona
         # (Intel CPUs)  atom core2 nocona
         #
-        TARGET_CPU="x86-64"
+        TARGET_CPU="silvermont"
         ;;
     esac
 
@@ -45,7 +45,7 @@
 ################################################################################
 
   # Project CFLAGS
-    PROJECT_CFLAGS="-mmmx -msse -msse2 -mfpmath=sse"
+    PROJECT_CFLAGS=""
 
   # SquashFS compression method (gzip / lzo / xz)
     SQUASHFS_COMPRESSION="gzip"
@@ -79,10 +79,10 @@
   # additional Firmware to use (dvb-firmware, misc-firmware, wlan-firmware)
   # Space separated list is supported,
   # e.g. FIRMWARE="dvb-firmware misc-firmware wlan-firmware"
-    FIRMWARE="misc-firmware wlan-firmware dvb-firmware iwlwifi-firmware"
+    FIRMWARE=""
 
   # additional drivers to install:
   # for a list of additinoal drivers see packages/linux-drivers
   # Space separated list is supported,
   # e.g. ADDITIONAL_DRIVERS="DRIVER1 DRIVER2"
-    ADDITIONAL_DRIVERS="$ADDITIONAL_DRIVERS bcm_sta media_build"
+    ADDITIONAL_DRIVERS="$ADDITIONAL_DRIVERS"
