@@ -1,5 +1,5 @@
 --- kodi/xbmc/linux/sse4/CMakeLists.txt	2016-12-25 01:09:02.283330622 +0100
-+++ ./CMakeLists.txt	2017-01-01 22:43:47.426026812 +0100
++++ kodi/xbmc/linux/sse4/CMakeLists.txt 2017-01-01 22:43:47.426026812 +0100
 @@ -1,9 +1,7 @@
 -if(HAVE_SSE4_1)
 -  set(SOURCES CopyFrame.cpp)
