@@ -16,17 +16,17 @@
 #  along with LibreELEC.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 
-PKG_NAME="game.libretro.fba"
-PKG_VERSION="abc48ac"
+PKG_NAME="game.libretro.mrboom"
+PKG_VERSION="284cd4b"
 PKG_REV="100"
-PKG_ARCH="any"
+PKG_ARCH="x86_64"
 PKG_LICENSE="GPL"
-PKG_SITE="https://github.com/kodi-game/game.libretro.fba"
-PKG_URL="https://github.com/kodi-game/game.libretro.fba/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain kodi-platform libretro-fba"
+PKG_SITE="https://github.com/kodi-game/game.libretro.mrboom"
+PKG_URL="https://github.com/kodi-game/game.libretro.mrboom/archive/$PKG_VERSION.tar.gz"
+PKG_DEPENDS_TARGET="toolchain kodi-platform libretro-mrboom"
 PKG_SECTION=""
-PKG_SHORTDESC="game.libretro.fba: fba for Kodi"
-PKG_LONGDESC="game.libretro.fba: fba for Kodi"
+PKG_SHORTDESC="game.libretro.mrboom: mrboom for Kodi"
+PKG_LONGDESC="game.libretro.mrboom: mrboom for Kodi"
 PKG_AUTORECONF="no"
 
 PKG_IS_ADDON="yes"

@@ -16,35 +16,31 @@
 #  along with LibreELEC.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 
-PKG_NAME="libretro-fba"
-PKG_VERSION="3e64a22"
+PKG_NAME="libretro-beetle-saturn"
+PKG_VERSION="bb5d0c1"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv3"
-PKG_SITE="https://github.com/libretro/libretro-fba"
-PKG_URL="https://github.com/libretro/libretro-fba/archive/$PKG_VERSION.tar.gz"
+PKG_SITE="https://github.com/libretro/beetle-saturn-libretro"
+PKG_URL="https://github.com/libretro/beetle-saturn-libretro/archive/$PKG_VERSION.tar.gz"
+PKG_SOURCE_DIR="beetle-saturn-libretro-$PKG_VERSION*"
 PKG_DEPENDS_TARGET="toolchain kodi-platform"
 PKG_SECTION="emulation"
-PKG_SHORTDESC="game.libretro.fba: fba for Kodi"
-PKG_LONGDESC="game.libretro.fba: fba for Kodi"
+PKG_SHORTDESC="game.libretro.beetle-saturn: beetle-saturn for Kodi"
+PKG_LONGDESC="game.libretro.beetle-saturn: beetle-saturn for Kodi"
 PKG_AUTORECONF="no"
 PKG_IS_ADDON="no"
+PKG_USE_CMAKE="no"
 
-PKG_LIBNAME="fba_libretro.so"
+PKG_LIBNAME="mednafen_saturn_libretro.so"
 PKG_LIBPATH="$PKG_LIBNAME"
-PKG_LIBVAR="FBA_LIB"
-
-pre_make_target() {
-  # linking takes too long with lto
-  strip_lto
-}
+PKG_LIBVAR="BEETLE-SATURN_LIB"
 
 make_target() {
-  make -f makefile.libretro
+  make
 }
 
 makeinstall_target() {
-  mkdir -p $INSTALL/usr/lib
-  cp $PKG_LIBPATH $INSTALL/usr/lib/$PKG_LIBNAME
-  echo "set($PKG_LIBVAR $INSTALL/usr/lib/$PKG_LIBNAME)" > $SYSROOT_PREFIX/usr/$PKG_NAME-config.cmake
+  mkdir -p $SYSROOT_PREFIX/usr/lib/cmake/$PKG_NAME
+  cp $PKG_LIBPATH $SYSROOT_PREFIX/usr/lib/$PKG_LIBNAME
+  echo "set($PKG_LIBVAR $SYSROOT_PREFIX/usr/lib/$PKG_LIBNAME)" > $SYSROOT_PREFIX/usr/lib/cmake/$PKG_NAME/$PKG_NAME-config.cmake
 }
-
